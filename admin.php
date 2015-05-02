@@ -7,7 +7,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="Sketch your own door.">
       <meta name="author" content="Evan Klein">
+      <link rel="stylesheet" href="/styles/main.css">
       <link href="../css/bootstrap.min.css" rel="stylesheet">
+      <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
       <title>Door Creator</title>
   </head>
   
@@ -16,7 +18,7 @@
       <div id="page-wrapper">
         <div id="pic-wrapper">
           <div id="loading">
-            <p class="message" ><br><br><br>Loading...</p>
+            <p class="message"><br><i class="fa fa-cog fa-spin"></i>Loading...</p>
           </div>
         </div>
         <form id="invisible_form" action="/play.php" method="post" target="_blank">
