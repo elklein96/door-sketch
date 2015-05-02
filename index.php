@@ -9,17 +9,19 @@
     <meta name="author" content="Evan Klein">
     <link rel="stylesheet" href="/styles/main.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <title>Door Creator</title>
 </head>
 
 <body>
-    <canvas id="colors_sketch" width="230" height="456" style="background: url(img/door.jpg) no-repeat center center;"></canvas>
-    <div class="tools">
-        <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="marker" id="marker">Marker</a>
-        <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="eraser" id="clear">Clear</a>
-        <a href="#colors_sketch" class="btn btn-success btn-outline" data-download="png" id="submit">Submit</a>
-        <input href='#colors_sketch' type="color" data-color='' id="color-picker">
+    <div class="container">
+        <canvas id="colors_sketch" width="230" height="456" style="background: url(img/door.jpg) no-repeat center center;"></canvas>
+        <div class="tools">
+            <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="marker" id="marker">Marker</a>
+            <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="eraser" id="clear">Clear</a>
+            <a href="#colors_sketch" class="btn btn-success btn-outline" data-download="png" id="submit">Submit</a>
+            <input href='#colors_sketch' type="color" data-color='' id="color-picker">
+        </div>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
