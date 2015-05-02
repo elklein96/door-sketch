@@ -18,7 +18,7 @@
       <div id="page-wrapper">
         <div id="pic-wrapper">
           <div id="loading">
-            <p class="message"><br><i class="fa fa-cog fa-spin"></i>Loading...</p>
+            <p class="message"><br><i class="fa fa-cog fa-5x fa-spin"></i>Loading...</p>
           </div>
         </div>
         <form id="invisible_form" action="/play.php" method="post" target="_blank">
