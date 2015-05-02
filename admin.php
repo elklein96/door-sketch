@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="Sketch your own door.">
       <meta name="author" content="Evan Klein">
-      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="../css/bootstrap.min.css" rel="stylesheet">
       <title>Door Creator</title>
   </head>
   
