@@ -6,7 +6,7 @@ try {
 	$collection = $db->movies;
 	$cursor = $collection->find();
 
-	if(isset($_POST['directory']))
+	if(isset($_POST['pic']))
 		retrieveDocs();
 	else
 		error_log("No data received");
@@ -18,7 +18,7 @@ try {
 function retrieveDocs(){
 	global $collection;
 	$output = array();
-	
+
 	$cursor = $collection->find();
 	$cursor->sort(array('path' => 1));
 
