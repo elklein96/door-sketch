@@ -2,8 +2,8 @@
 
 try {
 	$m = new Mongo();
-	$db = $m->media;
-	$collection = $db->movies;
+	$db = $m->doors;
+	$collection = $db->submissions;
 	$cursor = $collection->find();
 
 	if(isset($_POST['pic']))

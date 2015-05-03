@@ -21,9 +21,6 @@
             <p class="message" style="font-size:200%;"><br style="font-size:400%;"><i class="fa fa-cog fa-5x fa-spin"></i></p>
           </div>
         </div>
-        <form id="invisible_form" action="/play.php" method="post" target="_blank">
-          <input id="title" name="title" type="hidden" value="">
-        </form>
         <div id="footer"></div>
       </div>
     </div>
