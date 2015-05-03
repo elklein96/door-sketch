@@ -73,7 +73,7 @@ var __slice = Array.prototype.slice;
       }
       mime = "image/" + format;
 
-      $.ajax({
+      /*$.ajax({
         url: "/scripts/img_loader.php",
         type: "POST",
         data: {
@@ -86,7 +86,9 @@ var __slice = Array.prototype.slice;
         error: function() {
           $('.tools').append('<div id="error"><p class="text-danger">Uh-oh. Please try again.</p></div>');
         },
-      });
+      });*/
+
+      console.log(this.el.toDataURL(mime));
 
       //return window.open(this.el.toDataURL(mime));
     };
