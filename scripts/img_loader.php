@@ -7,12 +7,23 @@ try {
 	$id = uniqid();
 
 	if(isset($_POST['pic']))
-		addToMongo(array('id'=>$id, 'pic'=>$_POST['pic']), $id);
+		addToMongo(array('id'=>$id, 'pic'=>generatePic($_POST['pic'])), $id);
 	else
 		error_log("No data received");
 
 } catch(MongoConnectionException $e){
 	echo "Error Cannot connect to MongoDB.";
+}
+
+function generatePic($pic){
+	header('Content-Type: image/jpg');
+
+	$bg = imagecreatefromjpeg('/img/door.jpg');
+	$img = imagecreatefromstring(base64_decode($pic));
+
+	imagecopymerge($bg, $img, 0, 0, 0, 0, imagesx($bg), imagesy($bg), 75);
+
+	return imagejpeg($bg, null, 100);
 }
 
 function addToMongo($document, $id){
