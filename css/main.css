@@ -6466,7 +6466,7 @@ a.list-group-item-danger.active:focus {
   color: #fff;
 }
 
-.movie{
+.pic{
   height: 275px;
   width: 160px;
   position: relative;
@@ -6477,7 +6477,7 @@ a.list-group-item-danger.active:focus {
   padding-top: 1%;
 }
 
-.movie:hover{
+.pic:hover{
   border-style: solid;
   border-width: 2px;
   border-color: #303030;
@@ -6505,8 +6505,6 @@ a.list-group-item-danger.active:focus {
   height: 280px;
   margin:auto;
   display: block;
-  border-style: solid;
-  border-width: 1px;
 }
 
 .message{
