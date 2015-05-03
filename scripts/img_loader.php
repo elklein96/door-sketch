@@ -17,6 +17,8 @@ try {
 function addToMongo($document, $id){
 	global $collection;
 
+	error_log($document);
+
 	$idQuery = array('id' => $id);
 	if($collection->find($idQuery)->count() == 0){
 		error_log("Added new picture");

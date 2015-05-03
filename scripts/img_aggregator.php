@@ -31,7 +31,7 @@ function retrieveDocs(){
            	'counter' => $i
         );
        	$i++;
-   }
+    }
 	echo json_encode($output);
 }
 
