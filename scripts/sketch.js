@@ -77,7 +77,7 @@ var __slice = Array.prototype.slice;
         url: "/scripts/img_loader.php",
         type: "POST",
         data: {
-          img: this.el.toDataURL(mime)
+          pic: this.el.toDataURL(mime)
         },
         cache: false,
         success: function() {
