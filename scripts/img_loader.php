@@ -17,7 +17,7 @@ try {
 
 function generatePic($pic){
 	$bg = imagecreatefromjpeg('/img/door.jpg');
-	$img = imagecreatefromstring(base64_decode($pic));
+	$img = imagecreatefromstring(str_replace("data:image/png;base64,", "", $pic));
 
 	imagecopymerge($bg, $img, 0, 0, 0, 0, imagesx($bg), imagesy($bg), 75);
 
