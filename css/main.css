@@ -6467,8 +6467,6 @@ a.list-group-item-danger.active:focus {
 }
 
 .pic{
-  height: 275px;
-  width: 160px;
   position: relative;
   display: inline;
   float: left;
