@@ -16,6 +16,7 @@
   <body>
     <div class="container">
       <div id="page-wrapper">
+      <br>
         <div id="pic-wrapper">
           <div id="loading">
             <p class="message" style="font-size:200%;"><br style="font-size:400%;"><i class="fa fa-cog fa-5x fa-spin"></i></p>
