@@ -16,14 +16,12 @@ try {
 }
 
 function generatePic($pic){
-	header('Content-Type: image/jpg');
-
 	$bg = imagecreatefromjpeg('/img/door.jpg');
 	$img = imagecreatefromstring(base64_decode($pic));
 
 	imagecopymerge($bg, $img, 0, 0, 0, 0, imagesx($bg), imagesy($bg), 75);
 
-	$final = base64_encode(imagejpeg($bg, null, 100));
+	$final = base64_encode($bg);
 
 	error_log($final);
 
