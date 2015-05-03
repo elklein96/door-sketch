@@ -15,12 +15,14 @@
 
 <body>
     <div class="container">
-        <canvas id="colors_sketch" width="230" height="456" style="background: url(img/door.jpg) no-repeat center center;"></canvas>
-        <div class="tools">
-            <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="marker" id="marker">Marker</a>
-            <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="eraser" id="clear">Clear</a>
-            <a href="#colors_sketch" class="btn btn-success btn-outline" data-download="png" id="submit">Submit</a>
-            <input href='#colors_sketch' type="color" data-color='' id="color-picker">
+        <div id="page-wrapper">
+            <canvas id="colors_sketch" width="230" height="456" style="background: url(img/door.jpg) no-repeat center center;"></canvas>
+            <div class="tools">
+                <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="marker" id="marker">Marker</a>
+                <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="eraser" id="clear">Clear</a>
+                <a href="#colors_sketch" class="btn btn-success btn-outline" data-download="png" id="submit">Submit</a>
+                <input href='#colors_sketch' type="color" data-color='' id="color-picker">
+            </div>
         </div>
     </div>
 
