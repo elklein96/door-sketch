@@ -16,6 +16,7 @@
 <body>
     <div class="container">
         <div id="page-wrapper">
+            <br>
             <canvas id="colors_sketch" width="230" height="456" style="background: url(img/door.jpg) no-repeat center center;"></canvas>
             <div class="tools">
                 <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="marker" id="marker">Marker</a>
