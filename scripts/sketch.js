@@ -74,7 +74,7 @@ var __slice = Array.prototype.slice;
       mime = "image/" + format;
 
       $.ajax({
-        url: "./scripts/img_aggregator.php",
+        url: "/scripts/img_loader.php",
         type: "POST",
         data: {
           img: this.el.toDataURL(mime)
