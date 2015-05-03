@@ -6,7 +6,7 @@ try {
 	$collection = $db->submissions;
 
 	if(isset($_POST['pic']))
-		addToMongo($_POST['directory'], uniqid());
+		addToMongo($_POST['pic'], uniqid());
 	else
 		error_log("No data received");
 
