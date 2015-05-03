@@ -23,7 +23,11 @@ function generatePic($pic){
 
 	imagecopymerge($bg, $img, 0, 0, 0, 0, imagesx($bg), imagesy($bg), 75);
 
-	return base64_encode(imagejpeg($bg, null, 100));
+	$final = base64_encode(imagejpeg($bg, null, 100));
+
+	error_log($final);
+
+	return $final;
 }
 
 function addToMongo($document, $id){
