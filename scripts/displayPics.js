@@ -7,7 +7,7 @@ $(document).ready(function () {
     type:   "POST",
     url:    "../scripts/img_aggregator.php",
     data:   {
-        pic:  target
+        pic:  "req"
     },
     success: function(data) {
       $('#loading').hide();
@@ -20,14 +20,7 @@ $(document).ready(function () {
         json = $.parseJSON(data);
         for(var i=0; i<json.length; i++){
           console.log(json[i]);
-          $("#pic-wrapper").append('<div class="pic" id="pic'+i+'"><div class="poster-container"><img class="poster" id="poster'+i+'" src=""></div><div class="info" align=center id="info'+i+'"><p id="title'+i+'"></p><p id="date'+i+'"></p></div></div>');
-          
-          if(json[i].title.length == 0)
-            $('#title'+i).text(json[i].path.replace(target, ''));
-          else
-            $('#title'+i).text(json[i].title);
-          
-          $('#date'+i).text(json[i].year);
+          $("#pic-wrapper").append('<div class="pic" id="pic'+i+'"><div class="info" align=center id="info'+i+'"><p id="title'+i+'"></p><p id="date'+i+'"></p></div></div>');
         }
       }
     }
