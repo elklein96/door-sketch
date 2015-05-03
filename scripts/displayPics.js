@@ -47,7 +47,7 @@ $(document).on('click', '.pic', function () {
 
   if(!preview){
     $(this).addClass('selected');
-    $(this).parent().after("<div id='preview'><div class='preview-header'><h4>"+json[currentMovie].title+"</h4><hr noshade style='width:100%;height:0.5px;color:#FFF;'><h6>"+json[currentMovie].director+"</h6><br><p>"+json[currentMovie].plot+"</p><br></div><div class='poster-container' style='padding-top:1.5%;'><img class='poster-big' src='"+json[currentMovie].poster+"'></div></div>");
+    $(this).parent().after("<div id='preview'><div class='poster-container' style='padding-top:1.5%;'><img class='poster-big' src='"+json[currentMovie].pic+"'></div></div>");
     $('#preview').hide();
 
     $( "#preview" ).animate({
