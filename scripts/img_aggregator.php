@@ -1,16 +1,38 @@
 <?php
 
-if(isset($_POST['img'])){
+try {
+	$m = new Mongo();
+	$db = $m->media;
+	$collection = $db->movies;
+	$cursor = $collection->find();
 
-    $data = $_POST['img'];
-    $data = str_replace('data:image/png;base64,', '', $data);
-    $data = str_replace(' ', '+', $data);
-    $data = base64_decode($data);
+	if(isset($_POST['directory']))
+		retrieveDocs();
+	else
+		error_log("No data received");
 
-    $file = 'img/submissions/'. uniqid() . '.png';
-    $success = file_put_contents($file, $data);
+} catch(MongoConnectionException $e){
+	echo "Error Cannot connect to MongoDB.";
 }
 
-else
-	error_log("No data received");
+function retrieveDocs(){
+	global $collection;
+	$output = array();
+	
+	$cursor = $collection->find();
+	$cursor->sort(array('path' => 1));
+
+	$i=0;
+   	foreach($cursor as $item){
+       	$output[$i] = array(
+           	'_id'=>$item['_id'],
+           	'id'=>$item['id'],
+           	'pic'=>$item['pic'],
+           	'counter' => $i
+        );
+       	$i++;
+   }
+	echo json_encode($output);
+}
+
 ?>

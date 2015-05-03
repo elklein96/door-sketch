@@ -5,7 +5,7 @@ var currentMovie = 0;
 $(document).on('click', '#submit', function () {
   $.ajax({
     type:   "POST",
-    url:    "../scripts/img_loader.php",
+    url:    "../scripts/img_aggregator.php",
     data:   {
         pic:  target
     },
