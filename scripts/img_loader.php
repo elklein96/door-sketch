@@ -24,7 +24,7 @@ function generatePic($pic){
 	$top_image = imagecreatefromstring(preg_replace("(data.*base64,)", "", $pic)); 
 	imagesavealpha($top_image, true); 
 	imagealphablending($top_image, true); 
-	imagecopy($bottom_image, $top_image, 0, 0, 0, 0, imagesx($top_image), imagesy($top_image)); 
+	imagecopy($bottom_image, $top_image, 0, 0, 0, 0, imagesx($top_image), imagesy($top_image), 75); 
 
 	ob_start(); 
 		imagejpeg($bottom_image);
