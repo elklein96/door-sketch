@@ -19,14 +19,17 @@ function generatePic($pic){
 	$overlay = new Imagick();
 	$image = new Imagick('../img/door.jpg');
 
-	error_log($pic);
-
 	$overlay->readimageblob(base64_decode(preg_replace("(data.*base64,)", "", $pic)));
-	$overlay->setImageColorspace(Imagick::COLORSPACE_SRGB);
+	
+	/*$overlay->setImageColorspace(Imagick::COLORSPACE_SRGB);
 	$image->setImageColorspace(Imagick::COLORSPACE_SRGB); 
-	$image->compositeImage($overlay, Imagick::COMPOSITE_CLEAR, 0, 0);
+	$image->compositeImage($overlay, Imagick::COMPOSITE_CLEAR, 0, 0);*/
 
-	$output = "data:image/jpg;base64,".base64_encode($image->getImageBlob());
+	$image->addImage($overlay);
+    $image->setImageFormat('png');
+    $result = $image->mergeImageLayers(Imagick::LAYERMETHOD_COMPOSITE);
+
+	$output = "data:image/jpg;base64,".base64_encode($result->getImageBlob());
 
 	$overlay->destroy();
 	$image->destroy();
