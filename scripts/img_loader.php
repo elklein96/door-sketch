@@ -22,11 +22,10 @@ function generatePic($pic){
 	error_log($pic);
 
 	$overlay->readimageblob(base64_decode(preg_replace("(data.*base64,)", "", $pic)));
-	$overlay->setImageColorspace(13);
-	$image->setImageColorspace(13); 
+	
 	$image->compositeImage($overlay, Imagick::COMPOSITE_DEFAULT, 10, 10);
 
-	$output = base64_encode($image->getImageBlob());
+	$output = "data:image/jpg;base64,".base64_encode($image->getImageBlob());
 
 	$overlay->destroy();
 	$image->destroy();
