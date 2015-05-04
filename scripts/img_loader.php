@@ -18,7 +18,6 @@ try {
 function generatePic($pic){
 	//$overlay = new Imagick();
 	//$image = new Imagick('../img/door.jpg');
-
 	//$overlay->readimageblob(base64_decode(preg_replace("(data.*base64,)", "", $pic)));
 	
 	$bottom_image = imagecreatefromjpeg('../img/door.jpg'); 
@@ -27,14 +26,17 @@ function generatePic($pic){
 	imagealphablending($top_image, true); 
 	imagecopy($bottom_image, $top_image, 0, 0, 0, 0, imagesx($top_image), imagesy($top_image)); 
 
+	$output = "data:image/jpg;base64,".base64_encode($bottom_image);
+
 	/*$overlay->setImageColorspace(Imagick::COLORSPACE_SRGB);
 	$image->setImageColorspace(Imagick::COLORSPACE_SRGB); 
-	$image->compositeImage($overlay, Imagick::COMPOSITE_CLEAR, 0, 0);*/
-
+	$image->compositeImage($overlay, Imagick::COMPOSITE_CLEAR, 0, 0);
 	$output = "data:image/jpg;base64,".base64_encode($result->getImageBlob());
-
 	$overlay->destroy();
 	$image->destroy();*/
+
+	imagedestroy($bottom_image);
+	imagedestroy($top_image);
 
 	error_log($output);
 	return $output;
