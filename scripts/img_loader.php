@@ -16,16 +16,21 @@ try {
 }
 
 function generatePic($pic){
-	$bg = imagecreatefromjpeg('/img/door.jpg');
-	$img = imagecreatefromstring(str_replace("data:image/png;base64,", "", $pic));
+	$overlay = new Imagick();
+	$image = new Imagick('/img/door.jpg');
 
-	imagecopymerge($bg, $img, 0, 0, 0, 0, imagesx($bg), imagesy($bg), 75);
+	$overlay->readimageblob(base64_decode(str_replace("data:image/png;base64,", "", $pic)));
+	$overlay->setImageColorspace(13);
+	$image->setImageColorspace(13); 
+	$image->compositeImage($overlay, Imagick::COMPOSITE_DEFAULT, 10, 10);
 
-	$final = base64_decode($bg);
+	$output = base64_encode($image->getImageBlob());
 
-	error_log($final);
+	$overlay->destroy();
+	$image->destroy();
 
-	return $final;
+	error_log($output);
+	return $output;
 }
 
 function addToMongo($document, $id){
