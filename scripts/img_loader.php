@@ -19,6 +19,8 @@ function generatePic($pic){
 	$overlay = new Imagick();
 	$image = new Imagick('../img/door.jpg');
 
+	error_log($pic);
+
 	$overlay->readimageblob(base64_decode(str_replace("data:image/png;base64,", "", $pic)));
 	$overlay->setImageColorspace(13);
 	$image->setImageColorspace(13); 
