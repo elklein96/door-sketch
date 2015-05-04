@@ -21,7 +21,7 @@ function generatePic($pic){
 
 	imagecopymerge($bg, $img, 0, 0, 0, 0, imagesx($bg), imagesy($bg), 75);
 
-	$final = base64_encode($bg);
+	$final = base64_decode($bg);
 
 	error_log($final);
 

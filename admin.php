@@ -22,7 +22,7 @@
             <p class="message" style="font-size:200%;"><br style="font-size:400%;"><i class="fa fa-cog fa-5x fa-spin"></i></p>
           </div>
         </div>
-        <div id="footer"></div>
+        <div id="footer"><br></div>
       </div>
     </div>
 

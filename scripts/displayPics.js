@@ -30,7 +30,7 @@ $(document).ready(function () {
 $(document).on('click', '.pic', function () {
   var start = 0;
   var end = 0;
-  currentMovie = parseInt($(this).attr('id').replace('pic', ''));
+  currentPic = parseInt($(this).attr('id').replace('pic', ''));
 
   $( '.pic' ).removeClass('selected');
 
@@ -47,7 +47,7 @@ $(document).on('click', '.pic', function () {
 
   if(!preview){
     $(this).addClass('selected');
-    $(this).parent().after("<div id='preview'><div class='poster-container' style='padding-top:1.5%;'><img class='poster-big' src='"+json[currentMovie].pic+"'></div></div>");
+    $(this).parent().after("<div id='preview'><div class='poster-container' style='padding-top:1.5%;'><img class='poster-big' src='"+json[currentPic].pic+"'></div></div>");
     $('#preview').hide();
 
     $( "#preview" ).animate({
