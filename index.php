@@ -21,7 +21,7 @@
             <div class="tools">
                 <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="marker" id="marker">Marker</a>
                 <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="eraser" id="clear">Clear</a>
-                <a href="#colors_sketch" class="btn btn-success btn-outline" data-download="jpg" id="submit">Submit</a>
+                <a href="#colors_sketch" class="btn btn-success btn-outline" data-download="png" id="submit">Submit</a>
                 <input href='#colors_sketch' type="color" data-color='' id="color-picker">
             </div>
         </div>
