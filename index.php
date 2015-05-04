@@ -22,7 +22,8 @@
                 <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="marker" id="marker">Marker</a>
                 <a href="#colors_sketch" class="btn btn-success btn-outline" data-tool="eraser" id="clear">Clear</a>
                 <a href="#colors_sketch" class="btn btn-success btn-outline" data-download="png" id="submit">Submit</a>
-                <input href='#colors_sketch' type="color" data-color='' id="color-picker">
+                <a href='#colors_sketch' style='display:none;' data-color='' id='color'></a>
+                <input href='#colors_sketch' type="color" id="color-picker">
             </div>
         </div>
     </div>
@@ -31,17 +32,14 @@
     <script src="scripts/sketch.js"></script>
     <script type="text/javascript">
         $(function() {
-            $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function() {
-                $('.tools').append("<a href='#colors_sketch' data-color='"+this+"' style='background:"+this+";'></a> ");
-            });
             $.each([3, 5, 10, 15], function() {
                 $('.tools').append("<a href='#colors_sketch' data-size='"+this+"' style='background: #ccc'>"+this+"</a> ");
             });
             $('#colors_sketch').sketch();
         });
 
-        $("#colorChoice").change(function(){
-          $("#color-picker").attr('data-color', $(this).val());
+        $("#color-picker").change(function(){
+          $("#color").attr('data-color', $(this).val());
         });
     </script>
 </body>
