@@ -39,7 +39,8 @@ function generatePic($pic){
 	$overlay->setImageColorspace(Imagick::COLORSPACE_SRGB);
 	$image->setImageColorspace(Imagick::COLORSPACE_SRGB); 
 	$image->compositeImage($overlay, Imagick::COMPOSITE_CLEAR, 0, 0);
-	$output = "data:image/jpg;base64,".base64_encode($result->getImageBlob());
+	$output = "data:image/jpg;base64,".base64_encode($image->getImageBlob());
+
 	$overlay->destroy();
 	$image->destroy();
 
