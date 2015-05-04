@@ -31,15 +31,16 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="scripts/sketch.js"></script>
     <script type="text/javascript">
+        $("#color-picker").change(function(){
+          $("#color").attr('data-color', $(this).val());
+          $("#color").click();
+        });
+
         $(function() {
             $.each([3, 5, 10, 15], function() {
                 $('.tools').append("<a href='#colors_sketch' data-size='"+this+"' style='background: #ccc'>"+this+"</a> ");
             });
             $('#colors_sketch').sketch();
-        });
-
-        $("#color-picker").change(function(){
-          $("#color").attr('data-color', $(this).val());
         });
     </script>
 </body>
