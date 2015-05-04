@@ -26,7 +26,12 @@ function generatePic($pic){
 	imagealphablending($top_image, true); 
 	imagecopy($bottom_image, $top_image, 0, 0, 0, 0, imagesx($top_image), imagesy($top_image)); 
 
-	$output = "data:image/jpg;base64,".base64_encode($bottom_image);
+	ob_start($bottom_image); 
+	imagejpeg($img);
+	$image_data = ob_get_contents(); 
+	ob_end_clean(); 
+
+	$output = "data:image/jpg;base64,".base64_encode($image_data);
 
 	/*$overlay->setImageColorspace(Imagick::COLORSPACE_SRGB);
 	$image->setImageColorspace(Imagick::COLORSPACE_SRGB); 
