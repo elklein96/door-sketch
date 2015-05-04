@@ -21,7 +21,7 @@ function generatePic($pic){
 
 	error_log($pic);
 
-	$overlay->readimageblob(base64_decode(str_replace("data:image/png;base64,", "", $pic)));
+	$overlay->readimageblob(base64_decode(preg_replace("(data.*base64,)", "", $pic)));
 	$overlay->setImageColorspace(13);
 	$image->setImageColorspace(13); 
 	$image->compositeImage($overlay, Imagick::COMPOSITE_DEFAULT, 10, 10);
