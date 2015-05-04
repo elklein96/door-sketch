@@ -16,11 +16,11 @@ try {
 }
 
 function generatePic($pic){
-	//$overlay = new Imagick();
-	//$image = new Imagick('../img/door.jpg');
-	//$overlay->readimageblob(base64_decode(preg_replace("(data.*base64,)", "", $pic)));
+	$overlay = new Imagick();
+	$image = new Imagick('../img/door.jpg');
+	$overlay->readimageblob(base64_decode(preg_replace("(data.*base64,)", "", $pic)));
 	
-	$bottom_image = imagecreatefromjpeg('../img/door.jpg'); 
+	/*$bottom_image = imagecreatefromjpeg('../img/door.jpg'); 
 	$top_image = imagecreatefromstring(preg_replace("(data.*base64,)", "", $pic)); 
 	imagesavealpha($top_image, true); 
 	imagealphablending($top_image, true); 
@@ -33,15 +33,15 @@ function generatePic($pic){
 
 	$output = "data:image/jpg;base64,".base64_encode($image_data);
 
-	/*$overlay->setImageColorspace(Imagick::COLORSPACE_SRGB);
+	imagedestroy($bottom_image);
+	imagedestroy($top_image);*/
+
+	$overlay->setImageColorspace(Imagick::COLORSPACE_SRGB);
 	$image->setImageColorspace(Imagick::COLORSPACE_SRGB); 
 	$image->compositeImage($overlay, Imagick::COMPOSITE_CLEAR, 0, 0);
 	$output = "data:image/jpg;base64,".base64_encode($result->getImageBlob());
 	$overlay->destroy();
-	$image->destroy();*/
-
-	imagedestroy($bottom_image);
-	imagedestroy($top_image);
+	$image->destroy();
 
 	error_log($output);
 	return $output;
