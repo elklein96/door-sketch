@@ -89,8 +89,6 @@ var __slice = Array.prototype.slice;
       });
 
       console.log(this.el.toDataURL(mime));
-
-      //return window.open(this.el.toDataURL(mime));
     };
     Sketch.prototype.set = function(key, value) {
       this[key] = value;

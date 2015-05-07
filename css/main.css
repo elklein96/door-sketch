@@ -6493,14 +6493,8 @@ a.list-group-item-danger.active:focus {
   display: block;
 }
 
-.poster{
-  height: 160px;
-  margin:auto;
-  display: block;
-}
-
 .poster-big{
-  height: 280px;
+  height: 150%;
   margin:auto;
   display: block;
 }
@@ -6523,21 +6517,6 @@ a.list-group-item-danger.active:focus {
   margin-right: 5%;
   width: 50%;
   float: left;
-}
-
-#name{
-  font-size: 150%;
-}
-
-#play{
-  width: 10%;
-  display: inline;
-}
-
-#download{
-  width: 10%;
-  display: inline;
-  margin-left: 3%;
 }
 
 #footer{
