@@ -36,12 +36,7 @@
           $("#color").click();
         });
 
-        $(function() {
-            $.each([3, 5, 10, 15], function() {
-                $('.tools').append("<a href='#colors_sketch' data-size='"+this+"' style='background: #ccc'>"+this+"</a> ");
-            });
-            $('#colors_sketch').sketch();
-        });
+        $('#colors_sketch').sketch();
     </script>
 </body>
 
